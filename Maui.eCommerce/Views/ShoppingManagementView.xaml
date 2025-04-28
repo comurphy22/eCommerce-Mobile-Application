@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.eCommerce.Views.ShoppingManagementView"
+             Title="Shopping Cart">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Back Button -->
+        <Button Grid.Row="0"
+                Text="Go Back"
+                Clicked="OnBackButtonClicked"
+                HorizontalOptions="Start"
+                Margin="10"
+                HeightRequest="40"
+                WidthRequest="100"/>
+        
+        <!-- Main Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/><!--STORE-->
+                <ColumnDefinition/><!--USER SHOPPING CART-->
+            </Grid.ColumnDefinitions>
+
+            <!--STORE-->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <Label Grid.Row="0" 
+                       Text="Available Items" 
+                       FontSize="20" 
+                       Margin="10"
+                       HorizontalOptions="Center"/>
+                
+                <ListView Grid.Row="1"
+                          ItemsSource="{Binding Inventory}"
+                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                          SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="{Binding Model.Product.Name}"
+                                           VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding Model.Quantity, StringFormat='Qty: {0}'}"
+                                           VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+                <Button Grid.Row="2" 
+                        Text="Add to Cart" 
+                        Clicked="AddToCartClicked"
+                        Margin="10"
+                        HeightRequest="50"/>
+            </Grid>
+
+            <!--USER SHOPPING CART-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <Label Grid.Row="0" 
+                       Text="Shopping Cart" 
+                       FontSize="20" 
+                       Margin="10"
+                       HorizontalOptions="Center"/>
+                
+                <Label Grid.Row="1" 
+                       Text="{Binding ShoppingCart.Count, StringFormat='Items in cart: {0}'}"
+                       Margin="10"
+                       HorizontalOptions="Center"/>
+                
+                <ListView Grid.Row="2"
+                          ItemsSource="{Binding ShoppingCart}"
+                          SelectedItem="{Binding SelectedCartItem, Mode=TwoWay}"
+                          SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="{Binding Model.Product.Name}"
+                                           VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding Model.Quantity, StringFormat='Qty: {0}'}"
+                                           VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+                <Button Grid.Row="3" 
+                        Text="Remove from Cart" 
+                        Clicked="RemoveFromCartClicked"
+                        Margin="10"
+                        HeightRequest="50"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
