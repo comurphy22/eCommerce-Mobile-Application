@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Library.eCommerce.Models;
+using Microsoft.Maui.ApplicationModel;
 
 namespace Library.eCommerce.Services
 {
@@ -57,7 +58,17 @@ namespace Library.eCommerce.Services
 
         protected virtual void OnInventoryChanged()
         {
-            InventoryChanged?.Invoke(this, EventArgs.Empty);
+            if (MainThread.IsMainThread)
+            {
+                InventoryChanged?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                MainThread.BeginInvokeOnMainThread(() => 
+                {
+                    InventoryChanged?.Invoke(this, EventArgs.Empty);
+                });
+            }
         }
 
         private int LastKey

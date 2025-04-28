@@ -8,4 +8,8 @@
         <RootNamespace>meep</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.14" />
+    </ItemGroup>
+
 </Project>

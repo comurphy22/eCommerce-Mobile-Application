@@ -40,7 +40,7 @@
                        HorizontalOptions="Center"/>
                 
                 <ListView Grid.Row="1"
-                          ItemsSource="{Binding Inventory}"
+                          ItemsSource="{Binding Inventory, Mode=TwoWay}"
                           SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                           SelectionMode="Single">
                     <ListView.ItemTemplate>
@@ -91,7 +91,7 @@
                        HorizontalOptions="Center"/>
                 
                 <ListView Grid.Row="2"
-                          ItemsSource="{Binding ShoppingCart}"
+                          ItemsSource="{Binding ShoppingCart, Mode=TwoWay}"
                           SelectedItem="{Binding SelectedCartItem, Mode=TwoWay}"
                           SelectionMode="Single">
                     <ListView.ItemTemplate>

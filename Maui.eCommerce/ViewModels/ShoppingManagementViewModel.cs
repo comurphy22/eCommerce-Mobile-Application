@@ -24,14 +24,22 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
 
     private void LoadInventory()
     {
-        Inventory = new ObservableCollection<ItemViewModel>(
-            _invSvc.Inventory.Select(item => new ItemViewModel(item)));
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            Inventory = new ObservableCollection<ItemViewModel>(
+                _invSvc.Inventory.Select(item => new ItemViewModel(item)));
+            OnPropertyChanged(nameof(Inventory));
+        });
     }
 
     private void LoadShoppingCart()
     {
-        ShoppingCart = new ObservableCollection<ItemViewModel>(
-            _cartService.CartItems.Select(item => new ItemViewModel(item)));
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            ShoppingCart = new ObservableCollection<ItemViewModel>(
+                _cartService.CartItems.Select(item => new ItemViewModel(item)));
+            OnPropertyChanged(nameof(ShoppingCart));
+        });
     }
 
     private void OnInventoryChanged(object sender, EventArgs e)
@@ -102,19 +110,36 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     {
         try
         {
-            System.Diagnostics.Debug.WriteLine($"PurchaseItem called, SelectedItem is: {SelectedItem?.Model?.Product?.Name ?? "null"}");
             if (SelectedItem != null)
             {
                 _cartService.AddOrUpdate(SelectedItem.Model);
                 LoadShoppingCart();
                 LoadInventory();
+                // Force refresh of both collections
+                OnPropertyChanged(nameof(Inventory));
+                OnPropertyChanged(nameof(ShoppingCart));
             }
         }
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine($"Error in PurchaseItem: {ex.Message}");
-            // Handle or propagate the error as needed
+            // You might want to show this error to the user
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                Application.Current?.MainPage?.DisplayAlert("Error", ex.Message, "OK");
+            });
         }
+    }
+    
+    public void RefreshDisplays()
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            LoadInventory();
+            LoadShoppingCart();
+            OnPropertyChanged(nameof(Inventory));
+            OnPropertyChanged(nameof(ShoppingCart));
+        });
     }
 
     public void ReturnItem()

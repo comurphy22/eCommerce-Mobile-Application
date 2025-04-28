@@ -12,24 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.eCommerce/Library.eCommerce.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.eCommerce/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ItemViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/MainViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meep.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Library.eCommerce.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Library.eCommerce.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +30,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;comurphy22&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/comurphy22/eCommerceV3.git&quot;,
+    &quot;accountId&quot;: &quot;ca99080d-1782-485d-a972-d10f533250b2&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.eCommerce/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Maui.eCommerce/App.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -65,7 +83,7 @@
     &quot;.NET Project.meep.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;macOS.Maui.eCommerce.executor&quot;: &quot;Debug&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -144,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745873623500</updated>
-      <workItem from="1745873624664" duration="3114000" />
+      <workItem from="1745873624664" duration="4803000" />
     </task>
     <servers />
   </component>
@@ -155,5 +173,89 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs</url>
+          <line>80</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" containingFunctionPresentation="Method 'AddOrUpdate'">
+            <startOffsets>
+              <option value="2696" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2719" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs</url>
+          <line>85</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" containingFunctionPresentation="Method 'AddOrUpdate'">
+            <startOffsets>
+              <option value="2806" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2830" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs</url>
+          <line>66</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" containingFunctionPresentation="Method 'AddOrUpdate'">
+            <startOffsets>
+              <option value="2218" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2278" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs</url>
+          <line>61</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" containingFunctionPresentation="Method 'AddOrUpdate'">
+            <startOffsets>
+              <option value="2003" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2004" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs</url>
+          <line>74</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" containingFunctionPresentation="Method 'AddOrUpdate'">
+            <startOffsets>
+              <option value="2455" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2521" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs</url>
+          <line>75</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" containingFunctionPresentation="Method 'AddOrUpdate'">
+            <startOffsets>
+              <option value="2534" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2559" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -58,8 +58,20 @@ namespace Library.eCommerce.Services
             } 
         }
 
-        public void AddOrUpdate(Item item) //method to add or update item in cart
+        public void AddOrUpdate(Item item)
         {
+            // First check if there's enough inventory
+            var inventoryItem = _invSvc.GetById(item.Id);
+            if (inventoryItem == null || inventoryItem.Quantity <= 0)
+            {
+                throw new InvalidOperationException("Item is out of stock");
+            }
+
+            // Decrement inventory
+            inventoryItem.Quantity--;
+            _invSvc.AddOrUpdate(inventoryItem);
+
+            // Add to cart
             var existingItem = CartItems.FirstOrDefault(i => i.Id == item.Id);
             if (existingItem == null)
             {
