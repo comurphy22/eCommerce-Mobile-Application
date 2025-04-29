@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Maui.eCommerce.Views.ProductDetails"
              Title="ProductDetails"
-             NavigatedTo="ContentPage_NavigatedTo"
->
+             NavigatedTo="ContentPage_NavigatedTo">
     <VerticalStackLayout>
         <Label 
             Text="Name:"
@@ -14,11 +13,20 @@
             Text="{Binding Name}"
         />
         <Label 
+            Text="Price:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry
+            Text="{Binding Price}"
+            Keyboard="Numeric"
+        />
+        <Label 
             Text="Quantity:"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Entry
             Text="{Binding Quantity}"
+            Keyboard="Numeric"
         />
         <Button Text="Ok" Clicked="OkClicked"/>
         <Button Text="Go Back" Clicked="GoBackClicked"/>

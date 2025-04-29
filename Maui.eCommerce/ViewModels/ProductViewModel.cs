@@ -24,6 +24,17 @@ namespace Maui.eCommerce.ViewModels
                 }
             }
         }
+        public decimal Price
+        {
+            get => Model?.Price ?? 0m;
+            set
+            {
+                if(Model != null)
+                {
+                    Model.Price = value;
+                }
+            }
+        }
         public int Quantity
         {
             get => Model?.Quantity ?? 0;
