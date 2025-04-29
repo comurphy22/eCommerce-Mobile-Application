@@ -42,24 +42,23 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            
+    
             <StackLayout Grid.Column="0" Orientation="Horizontal">
                 <Label Text="Sort by:" VerticalOptions="Center"/>
                 <RadioButton Content="Name" 
-                            IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Name}}"
-                            GroupName="SortType"/>
+                             IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Name}}"
+                             GroupName="SortType"/>
                 <RadioButton Content="Price" 
-                            IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Price}}"
-                            GroupName="SortType"/>
+                             IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Price}}"
+                             GroupName="SortType"/>
             </StackLayout>
-            
-            <CheckBox Grid.Column="2" 
-                      IsChecked="{Binding SortAscending}"
-                      VerticalOptions="Center"/>
-            <Label Grid.Column="2" 
-                   Text="Ascending" 
-                   VerticalOptions="Center"
-                   Margin="30,0,0,0"/>
+    
+            <HorizontalStackLayout Grid.Column="2" Spacing="5">
+                <CheckBox IsChecked="{Binding SortAscending}"
+                          VerticalOptions="Center"/>
+                <Label Text="Ascending" 
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
         </Grid>
 
         <!-- Inventory List -->
