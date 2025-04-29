@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Maui.eCommerce.ViewModels"
+             xmlns:converters="clr-namespace:Maui.eCommerce.Converters"
+             xmlns:converters1="clr-namespace:Maui.eCommerce.Converters;assembly=Library.eCommerce"
              x:Class="Maui.eCommerce.Views.ShoppingManagementView"
              Title="Shopping Cart">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters1:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
     <Grid>
         <Grid.RowDefinitions>
@@ -110,19 +119,31 @@
                        HorizontalOptions="Center"/>
 
                 <!-- Sort Options -->
-                <Picker Grid.Row="2" 
-                        SelectedItem="{Binding SelectedSortOption}"
-                        Title="Sort by"
-                        Margin="10">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Name (A-Z)</x:String>
-                            <x:String>Name (Z-A)</x:String>
-                            <x:String>Price (Low-High)</x:String>
-                            <x:String>Price (High-Low)</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+                <Grid Grid.Row="2" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                        <Label Text="Sort by:" VerticalOptions="Center"/>
+                        <RadioButton Content="Name" 
+                                   IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Name}}"
+                                   GroupName="SortType"/>
+                        <RadioButton Content="Price" 
+                                   IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Price}}"
+                                   GroupName="SortType"/>
+                    </StackLayout>
+                    
+                    <CheckBox Grid.Column="2" 
+                             IsChecked="{Binding SortAscending}"
+                             VerticalOptions="Center"/>
+                    <Label Grid.Column="2" 
+                           Text="Ascending" 
+                           VerticalOptions="Center"
+                           Margin="30,0,0,0"/>
+                </Grid>
                 
                 <ListView Grid.Row="3"
                           ItemsSource="{Binding ShoppingCart}"

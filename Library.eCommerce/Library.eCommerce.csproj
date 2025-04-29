@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.Maui.Controls.Core" Version="9.0.14" />
       <PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.14" />
     </ItemGroup>
 

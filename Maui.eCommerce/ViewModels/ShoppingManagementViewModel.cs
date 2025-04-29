@@ -6,6 +6,12 @@ using Library.eCommerce.Services;
 
 namespace Maui.eCommerce.ViewModels;
 
+public enum SortType
+{
+    Name,
+    Price
+}
+
 public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
 {
     private readonly ShoppingCartService _cartService = ShoppingCartService.Current;
@@ -15,6 +21,8 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     private ItemViewModel _selectedCartItem;
     private ObservableCollection<ItemViewModel> _shoppingCart;
     private string _quantityToAdd = "1";
+    private SortType _sortBy = SortType.Name;
+    private bool _sortAscending = true;
 
     public ShoppingManagementViewModel()
     {
@@ -32,6 +40,34 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
             {
                 _quantityToAdd = value;
                 OnPropertyChanged();
+            }
+        }
+    }
+
+    public SortType SortBy
+    {
+        get => _sortBy;
+        set
+        {
+            if (_sortBy != value)
+            {
+                _sortBy = value;
+                OnPropertyChanged();
+                SortShoppingCart();
+            }
+        }
+    }
+
+    public bool SortAscending
+    {
+        get => _sortAscending;
+        set
+        {
+            if (_sortAscending != value)
+            {
+                _sortAscending = value;
+                OnPropertyChanged();
+                SortShoppingCart();
             }
         }
     }
@@ -109,7 +145,7 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     {
         ShoppingCart = new ObservableCollection<ItemViewModel>(_cartService.CartItems
             .Select(item => new ItemViewModel(item)));
-        SortShoppingCart(); // Add this line
+        SortShoppingCart();
         UpdateTotals();
     }
 
@@ -178,6 +214,24 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
+    private void SortShoppingCart()
+    {
+        var sortedItems = _sortBy switch
+        {
+            SortType.Name when _sortAscending => 
+                ShoppingCart.OrderBy(x => x.Model.Name),
+            SortType.Name => 
+                ShoppingCart.OrderByDescending(x => x.Model.Name),
+            SortType.Price when _sortAscending => 
+                ShoppingCart.OrderBy(x => x.Model.Product.Price),
+            SortType.Price => 
+                ShoppingCart.OrderByDescending(x => x.Model.Product.Price),
+            _ => ShoppingCart.AsEnumerable()
+        };
+
+        ShoppingCart = new ObservableCollection<ItemViewModel>(sortedItems);
+    }
+
     public void RefreshDisplays()
     {
         MainThread.BeginInvokeOnMainThread(() =>
@@ -209,34 +263,5 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     public void Dispose()
     {
         _invSvc.InventoryChanged -= OnInventoryChanged;
-    }
-    private string _selectedSortOption;
-    public string SelectedSortOption
-    {
-        get => _selectedSortOption;
-        set
-        {
-            if (_selectedSortOption != value)
-            {
-                _selectedSortOption = value;
-                OnPropertyChanged();
-                SortShoppingCart();
-            }
-        }
-    }
-
-    private void SortShoppingCart()
-    {
-        var sortedItems = _selectedSortOption switch
-        {
-            "Name (A-Z)" => ShoppingCart.OrderBy(x => x.Model.Name).ToList(),
-            "Name (Z-A)" => ShoppingCart.OrderByDescending(x => x.Model.Name).ToList(),
-            "Price (Low-High)" => ShoppingCart.OrderBy(x => x.Model.Product.Price).ToList(),
-            "Price (High-Low)" => ShoppingCart.OrderByDescending(x => x.Model.Product.Price).ToList(),
-            _ => ShoppingCart.ToList()
-        };
-
-        var newCart = new ObservableCollection<ItemViewModel>(sortedItems);
-        ShoppingCart = newCart;
     }
 }
