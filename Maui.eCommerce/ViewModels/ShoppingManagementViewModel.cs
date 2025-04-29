@@ -109,6 +109,7 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     {
         ShoppingCart = new ObservableCollection<ItemViewModel>(_cartService.CartItems
             .Select(item => new ItemViewModel(item)));
+        SortShoppingCart(); // Add this line
         UpdateTotals();
     }
 
@@ -208,5 +209,34 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     public void Dispose()
     {
         _invSvc.InventoryChanged -= OnInventoryChanged;
+    }
+    private string _selectedSortOption;
+    public string SelectedSortOption
+    {
+        get => _selectedSortOption;
+        set
+        {
+            if (_selectedSortOption != value)
+            {
+                _selectedSortOption = value;
+                OnPropertyChanged();
+                SortShoppingCart();
+            }
+        }
+    }
+
+    private void SortShoppingCart()
+    {
+        var sortedItems = _selectedSortOption switch
+        {
+            "Name (A-Z)" => ShoppingCart.OrderBy(x => x.Model.Name).ToList(),
+            "Name (Z-A)" => ShoppingCart.OrderByDescending(x => x.Model.Name).ToList(),
+            "Price (Low-High)" => ShoppingCart.OrderBy(x => x.Model.Product.Price).ToList(),
+            "Price (High-Low)" => ShoppingCart.OrderByDescending(x => x.Model.Product.Price).ToList(),
+            _ => ShoppingCart.ToList()
+        };
+
+        var newCart = new ObservableCollection<ItemViewModel>(sortedItems);
+        ShoppingCart = newCart;
     }
 }

@@ -92,6 +92,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -107,8 +108,23 @@
                        Text="{Binding ShoppingCart.Count, StringFormat='Items in cart: {0}'}"
                        Margin="10"
                        HorizontalOptions="Center"/>
+
+                <!-- Sort Options -->
+                <Picker Grid.Row="2" 
+                        SelectedItem="{Binding SelectedSortOption}"
+                        Title="Sort by"
+                        Margin="10">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Name (A-Z)</x:String>
+                            <x:String>Name (Z-A)</x:String>
+                            <x:String>Price (Low-High)</x:String>
+                            <x:String>Price (High-Low)</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
                 
-                <ListView Grid.Row="2"
+                <ListView Grid.Row="3"
                           ItemsSource="{Binding ShoppingCart}"
                           SelectedItem="{Binding SelectedCartItem}"
                           SelectionMode="Single">
@@ -138,7 +154,7 @@
                 </ListView>
 
                 <!-- Totals Section -->
-                <Frame Grid.Row="3" 
+                <Frame Grid.Row="4" 
                        Margin="10"
                        Padding="15"
                        BorderColor="Gray"
@@ -184,7 +200,7 @@
                     </Grid>
                 </Frame>
                 
-                <Button Grid.Row="4" 
+                <Button Grid.Row="5" 
                         Text="Remove from Cart" 
                         Clicked="RemoveFromCartClicked"
                         Margin="10"/>

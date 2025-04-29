@@ -12,10 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="">
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="implemented checkout box">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MauiProgram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/TaxCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/TaxCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +159,10 @@
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48b4b12dcc1b411093da679cf07f028910800/14/aa83efb9/PropertyChangedEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -170,6 +174,7 @@
     <setting file="file://$PROJECT_DIR$/Library.eCommerce/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Maui.eCommerce/App.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/connermurphy/dev/meep/Maui.eCommerce/MauiProgram.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/connermurphy/dev/meep/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/connermurphy/dev/meep/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" root0="FORCE_HIGHLIGHTING" />
@@ -341,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745896667618</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="implemented checkout box">
+      <option name="closed" value="true" />
+      <created>1745942396915</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745942396915</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +373,8 @@
     <MESSAGE value="shopping cart clears if quantity is 0" />
     <MESSAGE value="idk" />
     <MESSAGE value="id" />
-    <option name="LAST_COMMIT_MESSAGE" value="id" />
+    <MESSAGE value="implemented checkout box" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented checkout box" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
