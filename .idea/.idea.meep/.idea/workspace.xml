@@ -12,11 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="sort to shopping cart by price or name">
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/EnumToBoolConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/EnumToBoolConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="added sort to inventory">
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/TaxCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/TaxCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ConfigurationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ConfigurationViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
@@ -389,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745943357678</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added sort to inventory">
+      <option name="closed" value="true" />
+      <created>1745943935821</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745943935821</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +421,8 @@
     <MESSAGE value="implemented checkout box" />
     <MESSAGE value="sort for shopping cart" />
     <MESSAGE value="sort to shopping cart by price or name" />
-    <option name="LAST_COMMIT_MESSAGE" value="sort to shopping cart by price or name" />
+    <MESSAGE value="added sort to inventory" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sort to inventory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

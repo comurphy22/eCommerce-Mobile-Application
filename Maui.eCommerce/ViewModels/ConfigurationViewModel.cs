@@ -7,8 +7,7 @@ namespace Maui.eCommerce.ViewModels;
 public class ConfigurationViewModel
 {
     private string _taxRate;
-    private const string TAX_RATE_KEY = "tax_rate";
-
+    private const string TAX_RATE_KEY = "TaxRate";  
     public ConfigurationViewModel()
     {
         LoadConfiguration();
@@ -38,8 +37,12 @@ public class ConfigurationViewModel
     {
         if (ValidateTaxRate())
         {
-            Preferences.Set(TAX_RATE_KEY, TaxRate);
-            await Application.Current.MainPage.DisplayAlert("Success", "Tax rate has been saved.", "OK");
+            if (decimal.TryParse(TaxRate, out decimal rate))
+            {
+                Preferences.Set(TAX_RATE_KEY, TaxRate);
+                TaxCalculator.SetTaxRate(rate); // Add this line to update TaxCalculator
+                await Application.Current.MainPage.DisplayAlert("Success", "Tax rate has been saved.", "OK");
+            }
         }
         else
         {

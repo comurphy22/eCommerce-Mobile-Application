@@ -2,8 +2,7 @@ using Microsoft.Maui.Storage;
 
 public static class TaxCalculator
 {
-    private const string TAX_RATE_KEY = "TaxRate";
-
+    private const string TAX_RATE_KEY = "TaxRate";  
     // Add this method to set the tax rate
     public static void SetTaxRate(decimal rate)
     {
