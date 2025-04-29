@@ -14,6 +14,19 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     private ObservableCollection<ItemViewModel> _inventory;
     private ItemViewModel? _selectedCartItem;
     private ObservableCollection<ItemViewModel> _shoppingCart;
+    private string _quantityToAdd = "1";
+    public string QuantityToAdd
+    {
+        get => _quantityToAdd;
+        set
+        {
+            if (_quantityToAdd != value)
+            {
+                _quantityToAdd = value;
+                OnPropertyChanged();
+            }
+        }
+    }
 
     public ShoppingManagementViewModel()
     {
@@ -110,11 +123,20 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
     {
         try
         {
-            if (SelectedItem != null)
+            if (SelectedItem != null && 
+                int.TryParse(QuantityToAdd, out int quantity) && 
+                quantity > 0)
             {
-                _cartService.AddOrUpdate(SelectedItem.Model);
+                for (int i = 0; i < quantity && SelectedItem.Model.Quantity > 0; i++)
+                {
+                    _cartService.AddOrUpdate(SelectedItem.Model);
+                }
+                
                 LoadShoppingCart();
                 LoadInventory();
+                // Reset quantity to add
+                QuantityToAdd = "1";
+                
                 // Force refresh of both collections
                 OnPropertyChanged(nameof(Inventory));
                 OnPropertyChanged(nameof(ShoppingCart));
@@ -123,14 +145,12 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine($"Error in PurchaseItem: {ex.Message}");
-            // You might want to show this error to the user
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 Application.Current?.MainPage?.DisplayAlert("Error", ex.Message, "OK");
             });
         }
     }
-    
     public void RefreshDisplays()
     {
         MainThread.BeginInvokeOnMainThread(() =>

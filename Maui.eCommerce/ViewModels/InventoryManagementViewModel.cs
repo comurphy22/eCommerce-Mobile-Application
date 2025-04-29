@@ -52,6 +52,7 @@ public class InventoryManagementViewModel : INotifyPropertyChanged
     {
         MainThread.BeginInvokeOnMainThread(() =>
         {
+            var newInventory = new ObservableCollection<Item?>(_svc.Inventory);
             NotifyPropertyChanged(nameof(Inventory));
         });
     }

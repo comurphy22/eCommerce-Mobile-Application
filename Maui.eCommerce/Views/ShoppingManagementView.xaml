@@ -26,49 +26,63 @@
             </Grid.ColumnDefinitions>
 
             <!--STORE-->
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                
-                <Label Grid.Row="0" 
-                       Text="Available Items" 
-                       FontSize="20" 
-                       Margin="10"
-                       HorizontalOptions="Center"/>
-                
-                <ListView Grid.Row="1"
-                          ItemsSource="{Binding Inventory, Mode=TwoWay}"
-                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                          SelectionMode="Single">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid Padding="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" 
-                                           Text="{Binding Model.Product.Name}"
-                                           VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" 
-                                           Text="{Binding Model.Quantity, StringFormat='Qty: {0}'}"
-                                           VerticalOptions="Center"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                
-                <Button Grid.Row="2" 
-                        Text="Add to Cart" 
-                        Clicked="AddToCartClicked"
-                        Margin="10"
-                        HeightRequest="50"/>
-            </Grid>
+           <Grid Grid.Column="0">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    
+    <Label Grid.Row="0" 
+           Text="Available Items" 
+           FontSize="20" 
+           Margin="10"
+           HorizontalOptions="Center"/>
+    
+    <ListView Grid.Row="1"
+              ItemsSource="{Binding Inventory, Mode=TwoWay}"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+              SelectionMode="Single">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                               Text="{Binding Model.Product.Name}"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1" 
+                               Text="{Binding Model.Quantity, StringFormat='Qty: {0}'}"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+    <Grid Grid.Row="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Entry Grid.Column="0"
+               Text="{Binding QuantityToAdd}"
+               Keyboard="Numeric"
+               WidthRequest="60"
+               Margin="10,0"/>
+               
+        <Button Grid.Column="1" 
+                Text="Add to Cart" 
+                Clicked="AddToCartClicked"
+                Margin="10"
+                HeightRequest="50"/>
+    </Grid>
+</Grid>
 
             <!--USER SHOPPING CART-->
             <Grid Grid.Column="1">
