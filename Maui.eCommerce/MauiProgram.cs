@@ -8,6 +8,8 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        // Set the tax rate to 7%
+        TaxCalculator.SetTaxRate(7.0m);
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()

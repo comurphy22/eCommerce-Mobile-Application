@@ -12,18 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="added inline text box to shopping cart to add a specified number of items to shopping cart">
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ConfigurationViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/TaxCalculator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ConfigurationView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ConfigurationView.xaml.cs" afterDir="false" />
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MauiProgram.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/TaxCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/TaxCalculator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +41,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
@@ -337,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745893901736</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="shopping cart clears if quantity is 0">
+      <option name="closed" value="true" />
+      <created>1745896667618</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745896667618</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,9 +356,11 @@
     <MESSAGE value="inventory display fixed" />
     <MESSAGE value="added product details page for add/edit" />
     <MESSAGE value="implemented add" />
-    <MESSAGE value="idk" />
     <MESSAGE value="added inline text box to shopping cart to add a specified number of items to shopping cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="added inline text box to shopping cart to add a specified number of items to shopping cart" />
+    <MESSAGE value="shopping cart clears if quantity is 0" />
+    <MESSAGE value="idk" />
+    <MESSAGE value="id" />
+    <option name="LAST_COMMIT_MESSAGE" value="id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
