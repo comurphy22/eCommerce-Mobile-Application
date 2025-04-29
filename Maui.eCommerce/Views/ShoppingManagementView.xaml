@@ -4,12 +4,13 @@
              xmlns:viewmodels="clr-namespace:Maui.eCommerce.ViewModels"
              xmlns:converters="clr-namespace:Maui.eCommerce.Converters"
              xmlns:converters1="clr-namespace:Maui.eCommerce.Converters;assembly=Library.eCommerce"
+             xmlns:viewModels="clr-namespace:Maui.eCommerce.ViewModels;assembly=Library.eCommerce"
              x:Class="Maui.eCommerce.Views.ShoppingManagementView"
              Title="Shopping Cart">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converters1:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
+            <viewModels:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     

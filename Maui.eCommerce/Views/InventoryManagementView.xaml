@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Maui.eCommerce.ViewModels"
+             xmlns:converters="clr-namespace:Maui.eCommerce.Converters"
+             xmlns:viewModels="clr-namespace:Maui.eCommerce.ViewModels;assembly=Library.eCommerce"
              x:Class="Maui.eCommerce.Views.InventoryManagementView"
              Title="Inventory Management"
              NavigatedTo="ContentPage_NavigatedTo">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModels:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -25,8 +35,35 @@
                     Margin="5,0,0,0"/>
         </Grid>
 
+        <!-- Sort Controls -->
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackLayout Grid.Column="0" Orientation="Horizontal">
+                <Label Text="Sort by:" VerticalOptions="Center"/>
+                <RadioButton Content="Name" 
+                            IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Name}}"
+                            GroupName="SortType"/>
+                <RadioButton Content="Price" 
+                            IsChecked="{Binding SortBy, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static viewmodels:SortType.Price}}"
+                            GroupName="SortType"/>
+            </StackLayout>
+            
+            <CheckBox Grid.Column="2" 
+                      IsChecked="{Binding SortAscending}"
+                      VerticalOptions="Center"/>
+            <Label Grid.Column="2" 
+                   Text="Ascending" 
+                   VerticalOptions="Center"
+                   Margin="30,0,0,0"/>
+        </Grid>
+
         <!-- Inventory List -->
-        <ListView Grid.Row="1"
+        <ListView Grid.Row="2"
                   ItemsSource="{Binding Inventory}"
                   SelectedItem="{Binding SelectedItem}">
             <ListView.ItemTemplate>
@@ -59,7 +96,7 @@
         </ListView>
 
         <!-- Bottom Actions -->
-        <StackLayout Grid.Row="2" 
+        <StackLayout Grid.Row="3" 
                      Orientation="Horizontal" 
                      HorizontalOptions="Center" 
                      Spacing="10"
