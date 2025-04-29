@@ -13,6 +13,11 @@
                 Text="shop"
                 Clicked="ShopClicked"
             />
+            <Button Text="Configuration"
+                    Clicked="OnConfigurationClicked"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    Margin="0,10"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

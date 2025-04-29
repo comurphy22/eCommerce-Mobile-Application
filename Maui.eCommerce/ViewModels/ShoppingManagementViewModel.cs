@@ -8,13 +8,21 @@ namespace Maui.eCommerce.ViewModels;
 
 public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
 {
-    private ShoppingCartService _cartService = ShoppingCartService.Current;
-    private InventoryServiceProxy _invSvc = InventoryServiceProxy.Current;
+    private readonly ShoppingCartService _cartService = ShoppingCartService.Current;
+    private readonly InventoryServiceProxy _invSvc = InventoryServiceProxy.Current;
     private ItemViewModel _selectedItem;
     private ObservableCollection<ItemViewModel> _inventory;
-    private ItemViewModel? _selectedCartItem;
+    private ItemViewModel _selectedCartItem;
     private ObservableCollection<ItemViewModel> _shoppingCart;
     private string _quantityToAdd = "1";
+
+    public ShoppingManagementViewModel()
+    {
+        LoadInventory();
+        LoadShoppingCart();
+        _invSvc.InventoryChanged += OnInventoryChanged;
+    }
+
     public string QuantityToAdd
     {
         get => _quantityToAdd;
@@ -28,55 +36,6 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
-    public ShoppingManagementViewModel()
-    {
-        LoadInventory();
-        LoadShoppingCart();
-        _invSvc.InventoryChanged += OnInventoryChanged;
-    }
-
-    private void LoadInventory()
-    {
-        MainThread.BeginInvokeOnMainThread(() =>
-        {
-            Inventory = new ObservableCollection<ItemViewModel>(
-                _invSvc.Inventory.Select(item => new ItemViewModel(item)));
-            OnPropertyChanged(nameof(Inventory));
-        });
-    }
-
-    private void LoadShoppingCart()
-    {
-        MainThread.BeginInvokeOnMainThread(() =>
-        {
-            ShoppingCart = new ObservableCollection<ItemViewModel>(
-                _cartService.CartItems.Select(item => new ItemViewModel(item)));
-            OnPropertyChanged(nameof(ShoppingCart));
-        });
-    }
-
-    private void OnInventoryChanged(object sender, EventArgs e)
-    {
-        MainThread.BeginInvokeOnMainThread(() =>
-        {
-            LoadInventory();
-        });
-    }
-
-    public ItemViewModel? SelectedCartItem
-    {
-        get => _selectedCartItem;
-        set
-        {
-            if (_selectedCartItem != value)
-            {
-                _selectedCartItem = value;
-                System.Diagnostics.Debug.WriteLine($"SelectedCartItem changed to: {value?.Model?.Product?.Name ?? "null"}");
-                OnPropertyChanged();
-            }
-        }
-    }
-
     public ItemViewModel SelectedItem
     {
         get => _selectedItem;
@@ -85,10 +44,22 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
             if (_selectedItem != value)
             {
                 _selectedItem = value;
-                System.Diagnostics.Debug.WriteLine($"SelectedItem changed to: {value?.Model?.Product?.Name ?? "null"}");
                 OnPropertyChanged();
-            }  
-        } 
+            }
+        }
+    }
+
+    public ItemViewModel SelectedCartItem
+    {
+        get => _selectedCartItem;
+        set
+        {
+            if (_selectedCartItem != value)
+            {
+                _selectedCartItem = value;
+                OnPropertyChanged();
+            }
+        }
     }
 
     public ObservableCollection<ItemViewModel> Inventory
@@ -119,6 +90,36 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
+    public decimal Subtotal => ShoppingCart?.Sum(item => item.Model.Product.Price * item.Model.Quantity) ?? 0m;
+    public decimal TaxAmount => TaxCalculator.CalculateTax(Subtotal);
+    public decimal Total => Subtotal + TaxAmount;
+    public string TaxRate => $"{TaxCalculator.GetTaxRate():F2}%";
+
+    private void LoadInventory()
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            Inventory = new ObservableCollection<ItemViewModel>(
+                _invSvc.Inventory.Select(item => new ItemViewModel(item)));
+            OnPropertyChanged(nameof(Inventory));
+        });
+    }
+
+    private void LoadShoppingCart()
+    {
+        ShoppingCart = new ObservableCollection<ItemViewModel>(_cartService.CartItems
+            .Select(item => new ItemViewModel(item)));
+        UpdateTotals();
+    }
+
+    private void UpdateTotals()
+    {
+        OnPropertyChanged(nameof(Subtotal));
+        OnPropertyChanged(nameof(TaxAmount));
+        OnPropertyChanged(nameof(Total));
+        OnPropertyChanged(nameof(TaxRate));
+    }
+
     public void PurchaseItem()
     {
         try
@@ -134,12 +135,11 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
                 
                 LoadShoppingCart();
                 LoadInventory();
-                // Reset quantity to add
                 QuantityToAdd = "1";
                 
-                // Force refresh of both collections
                 OnPropertyChanged(nameof(Inventory));
                 OnPropertyChanged(nameof(ShoppingCart));
+                UpdateTotals();
             }
         }
         catch (Exception ex)
@@ -151,16 +151,6 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
             });
         }
     }
-    public void RefreshDisplays()
-    {
-        MainThread.BeginInvokeOnMainThread(() =>
-        {
-            LoadInventory();
-            LoadShoppingCart();
-            OnPropertyChanged(nameof(Inventory));
-            OnPropertyChanged(nameof(ShoppingCart));
-        });
-    }
 
     public void ReturnItem()
     {
@@ -171,18 +161,46 @@ public class ShoppingManagementViewModel : INotifyPropertyChanged, IDisposable
                 _cartService.ReturnItem(SelectedCartItem.Model);
                 LoadShoppingCart();
                 LoadInventory();
+                
+                OnPropertyChanged(nameof(Inventory));
+                OnPropertyChanged(nameof(ShoppingCart));
+                UpdateTotals();
             }
         }
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine($"Error in ReturnItem: {ex.Message}");
-            // Handle or propagate the error as needed
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                Application.Current?.MainPage?.DisplayAlert("Error", ex.Message, "OK");
+            });
         }
     }
 
-    public event PropertyChangedEventHandler? PropertyChanged;
+    public void RefreshDisplays()
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            LoadInventory();
+            LoadShoppingCart();
+            OnPropertyChanged(nameof(Inventory));
+            OnPropertyChanged(nameof(ShoppingCart));
+            UpdateTotals();
+        });
+    }
 
-    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    private void OnInventoryChanged(object sender, EventArgs e)
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            LoadInventory();
+            UpdateTotals();
+        });
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

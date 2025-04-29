@@ -14,7 +14,8 @@ public partial class ShoppingManagementView : ContentPage
     }
 
     private void RemoveFromCartClicked(object sender, EventArgs e)
-    {
+    {   
+        //check if quantity becomes 0, if so delete
         (BindingContext as ShoppingManagementViewModel).ReturnItem();
     }
 

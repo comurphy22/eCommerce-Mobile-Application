@@ -106,6 +106,11 @@ namespace Library.eCommerce.Services
             if (itemToReturn != null && itemToReturn.Quantity > 0)
             {
                 itemToReturn.Quantity--;
+                if (itemToReturn.Quantity == 0)
+                {
+                    CartItems.Remove(itemToReturn);
+                    itemToReturn = null;
+                }
                 var inventoryItem = _invSvc.GetById(itemToReturn.Id);
                 if(inventoryItem != null)
                 {

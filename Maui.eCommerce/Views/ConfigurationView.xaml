@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.eCommerce.Views.ConfigurationView"
+             Title="Configuration">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back Button -->
+        <Button Grid.Row="0"
+                Text="Go Back"
+                Clicked="OnBackButtonClicked"
+                HorizontalOptions="Start"
+                Margin="0,0,0,20"
+                HeightRequest="40"
+                WidthRequest="100"/>
+
+        <!-- Tax Rate Configuration -->
+        <VerticalStackLayout Grid.Row="1" Spacing="10">
+            <Label Text="Tax Rate Configuration"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+            
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Entry Grid.Column="0"
+                       Text="{Binding TaxRate}"
+                       Keyboard="Numeric"
+                       Placeholder="Enter tax rate (e.g., 8.5)"/>
+                
+                <Label Grid.Column="1"
+                       Text="%"
+                       VerticalOptions="Center"
+                       FontSize="18"/>
+            </Grid>
+        </VerticalStackLayout>
+
+        <!-- Save Button -->
+        <Button Grid.Row="3"
+                Text="Save Configuration"
+                Command="{Binding SaveCommand}"
+                HeightRequest="50"/>
+    </Grid>
+</ContentPage>

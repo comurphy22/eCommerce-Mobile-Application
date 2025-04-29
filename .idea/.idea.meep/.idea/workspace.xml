@@ -12,11 +12,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="idk">
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="added inline text box to shopping cart to add a specified number of items to shopping cart">
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ConfigurationViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/TaxCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ConfigurationView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ConfigurationView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ShoppingManagementViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +147,22 @@
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48b4b12dcc1b411093da679cf07f028910800/14/aa83efb9/PropertyChangedEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -151,6 +174,7 @@
     <setting file="file://$PROJECT_DIR$/Library.eCommerce/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Maui.eCommerce/App.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/connermurphy/dev/meep/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/connermurphy/dev/meep/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/connermurphy/dev/meep/Maui.eCommerce/Views/InventoryManagementView.xaml" root0="SKIP_HIGHLIGHTING" />
@@ -175,7 +199,7 @@
     &quot;.NET Project.meep.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.09701493&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.040498443&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;macOS.Maui.eCommerce.executor&quot;: &quot;Debug&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -305,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745892516643</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added inline text box to shopping cart to add a specified number of items to shopping cart">
+      <option name="closed" value="true" />
+      <created>1745893901736</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745893901736</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +353,8 @@
     <MESSAGE value="added product details page for add/edit" />
     <MESSAGE value="implemented add" />
     <MESSAGE value="idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk" />
+    <MESSAGE value="added inline text box to shopping cart to add a specified number of items to shopping cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="added inline text box to shopping cart to add a specified number of items to shopping cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
