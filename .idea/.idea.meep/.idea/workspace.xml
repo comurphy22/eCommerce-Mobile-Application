@@ -12,14 +12,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="">
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="improved">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Library.eCommerce.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Library.eCommerce.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,20 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
@@ -218,6 +231,23 @@
       <updated>1745873623500</updated>
       <workItem from="1745873624664" duration="4803000" />
     </task>
+    <task id="LOCAL-00001" summary="improved inv management page">
+      <option name="closed" value="true" />
+      <created>1745885225777</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745885225777</updated>
+    </task>
+    <task id="LOCAL-00002" summary="improved">
+      <option name="closed" value="true" />
+      <created>1745885236772</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745885236772</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,5 +257,40 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="improved inv management page" />
+    <MESSAGE value="improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Models/Item.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" containingFunctionPresentation="Property 'Display'">
+            <startOffsets>
+              <option value="690" />
+            </startOffsets>
+            <endOffsets>
+              <option value="717" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library.eCommerce/Models/Product.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" containingFunctionPresentation="Property 'Display'">
+            <startOffsets>
+              <option value="469" />
+            </startOffsets>
+            <endOffsets>
+              <option value="492" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

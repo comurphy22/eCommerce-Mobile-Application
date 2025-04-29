@@ -45,5 +45,5 @@ namespace Spring2025_Samples.Models
         {
             return $"{Id}. {Name} - {Price}";
         }
+        }
     }
-}

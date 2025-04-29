@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+
 namespace Library.eCommerce.Models
 {
     public class Item
@@ -25,19 +26,13 @@ namespace Library.eCommerce.Models
             return $"{Product} Quantity:{Quantity}";
         }
 
-        public string? Display { 
-            get
-            {
-                return $"{Product?.Display ?? string.Empty} Quantity: {Quantity}";
-            }
-        }
+        public string? Display => $"{Name} (Qty: {Quantity})";
 
-        public Item()   //item default constructor
+        public Item()
         {
             Product = new Product();
             Quantity = 0;
-            //Id = 0;
-            //AddCommand = new Command(DoAdd); for the UI
+            Name = Product.Name ?? string.Empty; // Initialize name
         }
         private void DoAdd()
         {
@@ -46,9 +41,9 @@ namespace Library.eCommerce.Models
 
         public Item(String name, Product product, int? quantity)
         {
-            Name = name;
+            Name = name ?? product.Name; // Use product name if name parameter is null
             Id = product.Id;
-            Product = product;
+            Product = new Product(product);
             Quantity = quantity;
         }
         public Item(Item i)
@@ -56,6 +51,7 @@ namespace Library.eCommerce.Models
             Product = new Product(i.Product);
             Quantity = i.Quantity;
             Id = i.Id;
+            Name = i.Name ?? i.Product.Name; // Use Product name as fallback
         }
 
 

@@ -125,9 +125,18 @@ namespace Library.eCommerce.Services
                 var existingProduct = Inventory.FirstOrDefault(p => p.Id == item.Id);
                 if (existingProduct != null)
                 {
+                    // Create new item with all properties properly copied
+                    var updatedItem = new Item
+                    {
+                        Id = item.Id,
+                        Name = item.Name ?? existingProduct.Name, // Preserve name if not null
+                        Product = new Product(item.Product),
+                        Quantity = item.Quantity
+                    };
+
                     var index = Inventory.IndexOf(existingProduct);
                     Inventory.RemoveAt(index);
-                    Inventory.Insert(index, new Item(item));
+                    Inventory.Insert(index, updatedItem);
                     success = true;
                 }
                 else

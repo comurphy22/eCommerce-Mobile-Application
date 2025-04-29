@@ -17,7 +17,15 @@ public class InventoryManagementViewModel : INotifyPropertyChanged
     {
         get
         {
-            var filteredList = _svc.Inventory.Where(p=>p?.Name?.ToLower().Contains(Query?.ToLower() ?? string.Empty) ?? false);
+            // If Query is empty or null, show all items
+            if (string.IsNullOrWhiteSpace(Query))
+            {
+                return new ObservableCollection<Item?>(_svc.Inventory);
+            }
+
+            // Otherwise, filter by name but don't exclude based on quantity
+            var filteredList = _svc.Inventory.Where(p => 
+                p?.Name?.ToLower().Contains(Query.ToLower()) ?? false);
             return new ObservableCollection<Item?>(filteredList);
         }
     }

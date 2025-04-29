@@ -79,19 +79,23 @@ namespace Library.eCommerce.Services
             var existingItem = CartItems.FirstOrDefault(i => i.Id == item.Id);
             if (existingItem == null)
             {
-                //add
-                var newItem = new Item(item);
-                newItem.Quantity = 1;
+                // Create new cart item
+                var newItem = new Item(
+                    inventoryItem.Name ?? item.Name ?? item.Product.Name, // Use all possible name sources
+                    item.Product,
+                    1
+                );
                 CartItems.Add(newItem);
             }
             else
             {
-                //update
+                // Update existing cart item
                 existingItem.Quantity++;
+                existingItem.Name = existingItem.Name ?? inventoryItem.Name ?? item.Name ?? item.Product.Name;
             }
         }
 
-        public Item? ReturnItem(Item? item) //method to remove item from cart
+        public Item? ReturnItem(Item? item)
         {
             if (item?.Id <= 0 || item == null)
             {
@@ -106,14 +110,22 @@ namespace Library.eCommerce.Services
                 if(inventoryItem != null)
                 {
                     inventoryItem.Quantity++;
+                    // Ensure name is preserved
+                    inventoryItem.Name = itemToReturn.Name ?? inventoryItem.Name;
                     _invSvc.AddOrUpdate(inventoryItem);
                 }
                 else
                 {
-                    _invSvc.AddOrUpdate(new Item(itemToReturn.Product.Name, itemToReturn.Product, 1));
+                    // Create new inventory item with proper name
+                    var newItem = new Item(
+                        itemToReturn.Name ?? itemToReturn.Product.Name,
+                        itemToReturn.Product,
+                        1
+                    );
+                    _invSvc.AddOrUpdate(newItem);
                 }
             }
-            
+    
             return itemToReturn;
         }
         
