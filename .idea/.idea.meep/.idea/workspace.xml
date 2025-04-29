@@ -12,13 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="improved">
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="inventory display fixed">
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/InventoryServiceProxy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/InventoryManagementViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +46,14 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
@@ -247,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745885236772</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="inventory display fixed">
+      <option name="closed" value="true" />
+      <created>1745886980192</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745886980192</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,24 +277,12 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="improved inv management page" />
     <MESSAGE value="improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved" />
+    <MESSAGE value="inventory display fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="inventory display fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library.eCommerce/Models/Item.cs</url>
-          <line>28</line>
-          <properties documentPath="$PROJECT_DIR$/Library.eCommerce/Models/Item.cs" containingFunctionPresentation="Property 'Display'">
-            <startOffsets>
-              <option value="690" />
-            </startOffsets>
-            <endOffsets>
-              <option value="717" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library.eCommerce/Models/Product.cs</url>
           <line>20</line>
@@ -290,6 +296,25 @@
           </properties>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" containingFunctionPresentation="Method 'AddClicked'">
+            <startOffsets>
+              <option value="550" />
+            </startOffsets>
+            <endOffsets>
+              <option value="587" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="System.NotImplementedException" isInternal="false" displayValue="NotImplementedException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="64" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

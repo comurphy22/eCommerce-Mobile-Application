@@ -49,4 +49,9 @@ public partial class InventoryManagementView : ContentPage
     {
         (BindingContext as InventoryManagementViewModel)?.RefreshProductList();
     }
+
+    private void ListItemAddClicked(object? sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//Product");
+    }
 }

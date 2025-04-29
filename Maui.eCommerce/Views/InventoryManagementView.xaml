@@ -43,6 +43,7 @@
                                    Text="{Binding Display}"
                                    VerticalOptions="Center"/>
                             <Button Grid.Column="1" 
+                                    Clicked="ListItemAddClicked"
                                     Text="Add" 
                                     Margin="5,0"/>
                             <Button Grid.Column="2" 

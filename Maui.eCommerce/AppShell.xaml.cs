@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls;
+﻿using Maui.eCommerce.Views;
+using Microsoft.Maui.Controls;
 
 namespace Maui.eCommerce;
 
@@ -7,5 +8,6 @@ public partial class AppShell : Shell
     public AppShell()
     {
         InitializeComponent();
+        Routing.RegisterRoute("Product", typeof(ProductDetails));
     }
 }
