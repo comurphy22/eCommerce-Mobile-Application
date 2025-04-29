@@ -39,7 +39,10 @@ public partial class InventoryManagementView : ContentPage
 
     private void ContentPage_NavigatedTo(object? sender, NavigatedToEventArgs e)
     {
-        (BindingContext as InventoryManagementViewModel)?.RefreshProductList();
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            (BindingContext as InventoryManagementViewModel)?.RefreshProductList();
+        });
     }
 
     private void SearchClicked(object? sender, EventArgs e)

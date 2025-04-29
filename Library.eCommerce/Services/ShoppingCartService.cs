@@ -28,9 +28,13 @@ namespace Library.eCommerce.Services
         }
         private ShoppingCartService() { //private constructor to prevent external instantiation
             items = new List<Item>();
-            InitializeCart();
+            //InitializeCart();
         }
-
+        public void InitializeCartIfNeeded() {
+            if (!items.Any()) {
+                InitializeCart();
+            }
+        }
         private void InitializeCart()
         {
             // Get some items from inventory

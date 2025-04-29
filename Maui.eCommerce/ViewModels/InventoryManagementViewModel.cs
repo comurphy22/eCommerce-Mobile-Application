@@ -42,7 +42,10 @@ public class InventoryManagementViewModel : INotifyPropertyChanged
 
     public void RefreshProductList()
     {
-        NotifyPropertyChanged(nameof(Inventory));
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            NotifyPropertyChanged(nameof(Inventory));
+        });
     }
     private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
     {

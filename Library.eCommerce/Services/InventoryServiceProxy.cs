@@ -90,7 +90,6 @@ namespace Library.eCommerce.Services
                         instance = new InventoryServiceProxy();
                     }
                 }
-
                 return instance;
             }
         }
