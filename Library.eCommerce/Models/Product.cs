@@ -22,6 +22,8 @@ namespace Spring2025_Samples.Models
             }
         }
 
+        public int Quantity { get; set; }
+
         public Product()
         {
             Name = string.Empty;
@@ -32,6 +34,7 @@ namespace Spring2025_Samples.Models
             Id = p.Id;
             Name = p.Name;
             Price = p.Price;
+            Quantity = p.Quantity;
         }
 
         public Product(int id, string name, decimal? price)

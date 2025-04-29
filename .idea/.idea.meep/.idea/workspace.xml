@@ -12,15 +12,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="inventory display fixed">
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml.cs" afterDir="false" />
+    <list default="true" id="a221168c-5571-4d31-bab1-3478ddaf58fd" name="Changes" comment="added product details page for add/edit">
+      <change afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ProductViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.meep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ProductDetails.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
@@ -154,22 +156,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.meep.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.040498443&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;macOS.Maui.eCommerce.executor&quot;: &quot;Debug&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.meep.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "XThreadsFramesViewSplitterKey": "0.09701493",
+    "git-widget-placeholder": "main",
+    "macOS.Maui.eCommerce.executor": "Debug",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="macOS.Maui.eCommerce">
     <configuration name="meep" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -265,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745886980192</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added product details page for add/edit">
+      <option name="closed" value="true" />
+      <created>1745888028764</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745888028764</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +288,8 @@
     <MESSAGE value="improved inv management page" />
     <MESSAGE value="improved" />
     <MESSAGE value="inventory display fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="inventory display fixed" />
+    <MESSAGE value="added product details page for add/edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="added product details page for add/edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -295,19 +306,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" containingFunctionPresentation="Method 'AddClicked'">
-            <startOffsets>
-              <option value="550" />
-            </startOffsets>
-            <endOffsets>
-              <option value="587" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="System.NotImplementedException" isInternal="false" displayValue="NotImplementedException" namespaceName="System">
